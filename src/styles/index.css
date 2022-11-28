@@ -1,3 +1,44 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@font-face{
+    src: url("../assets/fonts/IranYekan.woff2");
+    font-family: "IranYekan";
+}
+:root {
+    --primary: #a73f8b;
+    --secondary: #f4f4f4;
+    --dark-primary: #200F21;
+    --dark-secondary:#382039;
+}
+@layer components {
+    .bg-primary{
+        background: var(--primary);
+    }
+    .bg-secondary{
+        background: var(--secondary);
+    }
+    .bg-dark-primary{
+        background: var(--dark-primary);
+    }
+    .bg-dark-secondary{
+        background: var(--dark-secondary);
+    }
+    .color-primary{
+        color: var(--primary);
+    }
+    .color-secondary{
+        color: var(--secondary);
+    }
+    .color-dark-primary{
+        color: var(--dark-primary);
+    }
+    .color-dark-secondary{
+        color: var(--dark-secondary);
+    }
+}
+body{
+    direction: rtl;
+    font-family: "IranYekan",sans-serif;
+    font-size: 1em;
+}
