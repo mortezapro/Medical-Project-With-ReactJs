@@ -1,0 +1,55 @@
+/* introduction section */
+#section-introduction{
+    margin-bottom: 3rem;
+}
+#section-introduction .card-item{
+    position: relative;
+    border-radius: 12px;
+    /*box-shadow: 0 8px 24px rgb(0 0 0 / 10%);*/
+    /*margin-bottom: 1rem;*/
+}
+#section-introduction .card-item .card-image{
+    -webkit-transition: 500ms ease all;
+    transition: 500ms ease all;
+    /*min-height: 230px;*/
+}
+
+#section-introduction img {
+    width: 100%;
+    border-radius: 12px;
+}
+#section-introduction .ads{
+    margin-top: 2rem;
+}
+#section-introduction .ads img{
+    height: 185px;
+    object-fit: cover;
+}
+
+#section-introduction .card-item .card-overlay{
+    -webkit-transition: 500ms ease all;
+    transition: 500ms ease all;
+    background: linear-gradient(rgba(34, 34, 34, .1),rgba(34, 34, 34, .1),rgba(34, 34, 34, .1),rgba(34, 34, 34, .1),rgba(34, 34, 34, .3),rgba(34, 34, 34, .7));
+    position: absolute;
+    border-radius: 12px;
+    top: 0;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+}
+#section-introduction .card-item .card-overlay .card-content{
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    padding: .5rem;
+    text-align: center;
+}
+#section-introduction .card-item .card-overlay .card-content h2{
+    font-size: 1rem;
+    color:#fcfcfc;
+}
+@media (min-width: 768px){
+    #section-introduction .card-item .card-overlay .card-content h2{
+        font-size: 1.2rem;
+    }
+}
