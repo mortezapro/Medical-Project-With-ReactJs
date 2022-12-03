@@ -1,17 +1,14 @@
 /* introduction section */
 #section-introduction{
-    margin-bottom: 3rem;
+    padding: 1em 0;
 }
 #section-introduction .card-item{
     position: relative;
     border-radius: 12px;
-    /*box-shadow: 0 8px 24px rgb(0 0 0 / 10%);*/
-    /*margin-bottom: 1rem;*/
 }
 #section-introduction .card-item .card-image{
     -webkit-transition: 500ms ease all;
     transition: 500ms ease all;
-    /*min-height: 230px;*/
 }
 
 #section-introduction img {
@@ -52,4 +49,78 @@
     #section-introduction .card-item .card-overlay .card-content h2{
         font-size: 1.2rem;
     }
+}
+/* trends section */
+
+#trends-section .card-body{
+    padding: 1rem 1rem 2rem 1rem;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    overflow:hidden;
+}
+#trends-section .card-body h2{
+    font-size: 1rem;
+    line-height: .7cm;
+    font-weight: bold;
+    margin-bottom: .8em;
+}
+#trends-section .card-body p{
+    font-size:.8rem;
+    line-height: .7cm;
+}
+#trends-section .card-image{
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    overflow: hidden;
+}
+#trends-section .container-swiper{
+    padding: 0 3rem;
+}
+#trends-section .container-swiper{
+    position: relative;
+}
+#trends-section .custom-button-prev,#trends-section .custom-button-next{
+    font-size: 2rem;
+    position: absolute;
+    z-index: 99;
+    top:45%;
+    cursor: pointer;
+}
+#trends-section .custom-button-prev{
+    right: 0;
+}
+#trends-section .custom-button-next{
+    left: 0;
+}
+#trends-section .btn-more{
+    padding: .4rem 1.5rem;
+    background: #CB3798;
+    font-size: .9rem;
+    color: #fcfcfc;
+    position: relative;
+    top: -12px;
+    border-radius: 12px;
+}
+#trends-section .custom-button-next.swiper-button-disabled, .custom-button-prev.swiper-button-disabled {
+    opacity: .35;
+    cursor: auto;
+    pointer-events: none;
+    transition: ease all .5s;
+    -webkit-transition: ease all .5s;
+    -moz-transition: ease all .5s;
+    -o-transition: ease all .5s;
+}
+.section-title{
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 5rem;
+}
+.section-title h2:after{
+    content: "";
+    background: var(--primary);
+    height: 2px;
+    display:block;
+    max-width: 250px;
+    margin:1.2rem auto auto auto;
+
 }
