@@ -35,9 +35,10 @@ export default function Header() {
         localStorage.setItem('theme', theme);
         document.body.className = theme;
     }, [theme]);
+
     return (
-        <header>
-            <Disclosure as="nav" className="dark:bg-dark-primary py-2">
+        <header className="scrolled shadow-sm bg-white sticky z-50 top-0 dark:bg-dark-secondary dark:shadow-gray-700">
+            <Disclosure as="nav" className="py-2">
                 {({ open }) => (
                     <div className="container mx-auto px-4 md:px-0">
                         <div className="relative flex h-16 items-center justify-between">
@@ -89,7 +90,7 @@ export default function Header() {
                                 <button
                                     onClick={toggleTheme}
                                     type="button"
-                                    className="cursor-pointer rounded-full border border-current p-1 dark:bg-black dark:text-white"
+                                    className="cursor-pointer rounded-full border border-current p-1 dark:bg-dark-secondary dark:color-secondary"
                                 >
                                     <span className="sr-only">Dark Mode</span>
                                     {toggleDarkIcon}
@@ -111,7 +112,7 @@ export default function Header() {
                                     {/*</Menu.Button>*/}
                                     <Menu.Button
                                         type="button"
-                                        className="rounded-full border border-current p-1 dark:bg-black dark:text-white">
+                                        className="rounded-full border border-current p-1 dark:bg-dark-secondary dark:color-secondary">
                                         <UserIcon className="h-6 w-6 rounded-full"/>
                                     </Menu.Button>
 
@@ -124,12 +125,12 @@ export default function Header() {
                                         leaveFrom="transform opacity-100 scale-100"
                                         leaveTo="transform opacity-0 scale-95"
                                     >
-                                        <Menu.Items className="absolute left-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                                        <Menu.Items className="absolute left-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-sm ring-1 ring-black ring-opacity-5 focus:outline-none dark:bg-dark-secondary dark:border dark:border-gray-600 ">
                                             <Menu.Item>
                                                 {({ active }) => (
                                                     <a
                                                         href="/"
-                                                        className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
+                                                        className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700 dark:color-secondary dark:hover:color-dark-secondary')}
                                                     >
                                                         پروفایل
                                                     </a>
@@ -139,7 +140,7 @@ export default function Header() {
                                                 {({ active }) => (
                                                     <a
                                                         href="/"
-                                                        className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
+                                                        className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700 dark:color-secondary dark:hover:color-dark-secondary')}
                                                     >
                                                         تنظیمات
                                                     </a>
@@ -149,7 +150,7 @@ export default function Header() {
                                                 {({ active }) => (
                                                     <a
                                                         href="/"
-                                                        className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
+                                                        className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700 dark:color-secondary dark:hover:color-dark-secondary')}
                                                     >
                                                         خروج
                                                     </a>
