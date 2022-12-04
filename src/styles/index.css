@@ -80,7 +80,7 @@ h1,h2,h3,h4,h5,h6,p{
     line-height: .8cm;
 }
 input,button,select,a.btn{
-    border-radius: 12px!important;
+    border-radius: 12px;
 }
 header a,header a:hover,header,main,body,footer{
     transition: ease all 300ms;
