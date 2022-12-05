@@ -1,4 +1,5 @@
 import "./Footer.css"
+import {Link} from "react-router-dom";
 export default function Footer(){
     return(
         <>
@@ -16,8 +17,8 @@ export default function Footer(){
                                 </svg>
                                 درباره برند
                             </h6>
-                            <p>
-                                نوکو پایگاهی برای آموزش والدین و کودکان در فضای مجازی است که با هدف ارتقاء دانش و فرهنگ صحیح پرورش کودک و با نگاهی آموزش محور با ارائه محتواهای با کیفیت با بیانی ساده و با استفاده از منابع علمی معتبر دنیا، ایجاد شده است.
+                            <p className="leading-8">
+                                <Link className="font-bold color-primary" to="/">برند </Link> پایگاهی برای آموزش والدین و کودکان در فضای مجازی است که با هدف ارتقاء دانش و فرهنگ صحیح پرورش کودک و با نگاهی آموزش محور با ارائه محتواهای با کیفیت با بیانی ساده و با استفاده از منابع علمی معتبر دنیا، ایجاد شده است.
                             </p>
                         </div>
                         <div className="text-center md:text-right">
