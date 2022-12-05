@@ -24,7 +24,7 @@ export default class SearchZone extends React.Component {
                         </select>
                     </div>
                     <div className="lg:pr-2 md:pr-2 mb-4">
-                        <button type="button" className="bg-primary color-secondary px-6 py-2 rounded-[12px] text-sm w-full dark:bg-dark-secondary">
+                        <button type="button" className="bg-primary color-secondary px-6 py-2 rounded-[12px] text-sm w-full">
                             <MagnifyingGlassIcon className="w-6 h-6 inline-block ml-1"/>
                             جستجو
                         </button>
