@@ -3,7 +3,7 @@ import {Link} from "react-router-dom";
 export default function Footer(){
     return(
         <>
-            <footer className="text-justify bg-white text-gray-600 border-y dark:bg-dark-secondary dark:border-gray-600 dark:color-secondary">
+            <footer className="text-justify bg-white text-gray-600 border-y dark:bg-dark-secondary dark:border-gray-600 dark:text-secondary">
                 <div className="container mx-auto px-4 md:px-0">
                     <div className="grid grid-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
                         <div>
@@ -18,7 +18,7 @@ export default function Footer(){
                                 درباره برند
                             </h6>
                             <p className="leading-8">
-                                <Link className="font-bold color-primary" to="/">برند </Link> پایگاهی برای آموزش والدین و کودکان در فضای مجازی است که با هدف ارتقاء دانش و فرهنگ صحیح پرورش کودک و با نگاهی آموزش محور با ارائه محتواهای با کیفیت با بیانی ساده و با استفاده از منابع علمی معتبر دنیا، ایجاد شده است.
+                                <Link className="font-bold text-primary" to="/">برند </Link> پایگاهی برای آموزش والدین و کودکان در فضای مجازی است که با هدف ارتقاء دانش و فرهنگ صحیح پرورش کودک و با نگاهی آموزش محور با ارائه محتواهای با کیفیت با بیانی ساده و با استفاده از منابع علمی معتبر دنیا، ایجاد شده است.
                             </p>
                         </div>
                         <div className="text-center md:text-right">
@@ -103,7 +103,7 @@ export default function Footer(){
                     </div>
                 </div>
             </footer>
-            <div className="text-center p-6 bg-white text-gray-600 shadow-sm dark:bg-dark-secondary dark:shadow-white dark:color-secondary">
+            <div className="text-center p-6 bg-white text-gray-600 shadow-sm dark:bg-dark-secondary dark:shadow-white dark:text-secondary">
                 <span>همه‌ی حقوق برای </span>
                 <a className="font-semibold" href="https://tailwind-elements.com/">Example Brand </a>
                 محفوظ است

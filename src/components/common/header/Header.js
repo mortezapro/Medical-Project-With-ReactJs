@@ -2,8 +2,8 @@ import {Fragment, useEffect, useState} from 'react'
 import {Link} from "react-router-dom";
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon,MoonIcon,SunIcon,UserIcon } from '@heroicons/react/24/outline'
-import logo_sm from "../../../assets/images/logo/logo-sm.png"
-import logo_lg from "../../../assets/images/logo/logo-lg.png"
+import logo_sm from "assets/images/logo/logo-sm.png"
+import logo_lg from "assets/images/logo/logo-lg.png"
 import "./Header.css"
 let toggleDarkIcon = <SunIcon className="h-6 w-6" aria-hidden="true" />
 const navigation = [
@@ -69,17 +69,17 @@ export default function Header() {
                                 <div className="hidden sm:mr-6 sm:block">
                                     <div className="flex space-x-4">
                                         {navigation.map((item) => (
-                                            <a
+                                            <Link
                                                 key={item.name}
-                                                href={item.href}
+                                                to={item.href}
                                                 className={classNames(
-                                                    item.current ? 'bg-primary text-white ml-2' : 'dark:color-secondary hover:bg-primary hover:text-white mr-2',
+                                                    item.current ? 'bg-primary text-white ml-2' : 'dark:text-secondary hover:bg-primary hover:text-white mr-2',
                                                     'px-3 py-2 rounded-md text-sm font-medium'
                                                 )}
                                                 aria-current={item.current ? 'page' : undefined}
                                             >
                                                 {item.name}
-                                            </a>
+                                            </Link>
                                         ))}
                                     </div>
                                 </div>
@@ -90,7 +90,7 @@ export default function Header() {
                                 <button
                                     onClick={toggleTheme}
                                     type="button"
-                                    className="cursor-pointer rounded-full border border-current p-1 dark:bg-dark-secondary dark:color-secondary"
+                                    className="cursor-pointer rounded-full border border-current p-1 dark:bg-dark-secondary dark:text-secondary"
                                 >
                                     <span className="sr-only">Dark Mode</span>
                                     {toggleDarkIcon}
@@ -112,7 +112,7 @@ export default function Header() {
                                     {/*</Menu.Button>*/}
                                     <Menu.Button
                                         type="button"
-                                        className="rounded-full border border-current p-1 dark:bg-dark-secondary dark:color-secondary">
+                                        className="rounded-full border border-current p-1 dark:bg-dark-secondary dark:text-secondary">
                                         <UserIcon className="h-6 w-6 rounded-full"/>
                                     </Menu.Button>
 
@@ -128,32 +128,32 @@ export default function Header() {
                                         <Menu.Items className="absolute left-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-sm ring-1 ring-black ring-opacity-5 focus:outline-none dark:bg-dark-secondary dark:border dark:border-gray-600 ">
                                             <Menu.Item>
                                                 {({ active }) => (
-                                                    <a
-                                                        href="/"
-                                                        className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700 dark:color-secondary dark:hover:color-dark-secondary')}
+                                                    <Link
+                                                        to="/"
+                                                        className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700 dark:text-secondary dark:hover:text-dark-secondary')}
                                                     >
                                                         پروفایل
-                                                    </a>
+                                                    </Link>
                                                 )}
                                             </Menu.Item>
                                             <Menu.Item>
                                                 {({ active }) => (
-                                                    <a
-                                                        href="/"
-                                                        className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700 dark:color-secondary dark:hover:color-dark-secondary')}
+                                                    <Link
+                                                        to="/"
+                                                        className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700 dark:text-secondary dark:hover:text-dark-secondary')}
                                                     >
                                                         تنظیمات
-                                                    </a>
+                                                    </Link>
                                                 )}
                                             </Menu.Item>
                                             <Menu.Item>
                                                 {({ active }) => (
-                                                    <a
-                                                        href="/"
-                                                        className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700 dark:color-secondary dark:hover:color-dark-secondary')}
+                                                    <Link
+                                                        to="/"
+                                                        className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700 dark:text-secondary dark:hover:text-dark-secondary')}
                                                     >
                                                         خروج
-                                                    </a>
+                                                    </Link>
                                                 )}
                                             </Menu.Item>
                                         </Menu.Items>
@@ -170,7 +170,7 @@ export default function Header() {
                                         as="a"
                                         href={item.href}
                                         className={classNames(
-                                            item.current ? 'bg-primary text-white' : 'dark:color-secondary hover:bg-primary hover:text-white',
+                                            item.current ? 'bg-primary text-white' : 'dark:text-secondary hover:bg-primary hover:text-white',
                                             'block px-3 py-2 rounded-md text-base font-medium'
                                         )}
                                         aria-current={item.current ? 'page' : undefined}
