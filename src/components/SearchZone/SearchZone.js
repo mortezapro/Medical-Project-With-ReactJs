@@ -7,24 +7,24 @@ export default class SearchZone extends React.Component {
             <div className="container mx-auto px-4 md:px-0">
                 <div className="grid pt-4 lg:grid-cols-4 md:grid-cols-2">
                     <div className=" lg:pl-2 md:pl-2 mb-4">
-                        <input type="text" placeholder="جستجو ..." className="appearance-none border rounded-[12px] w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-sm dark:focus:shadow-gray-600 dark:bg-dark-secondary dark:color-secondary dark:border-gray-600"/>
+                        <input type="text" placeholder="جستجو ..." className="appearance-none border rounded-[12px] w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-sm dark:focus:shadow-gray-600 dark:bg-dark-secondary dark:text-secondary dark:border-gray-600"/>
                     </div>
                     <div className="lg:px-2 md:pr-2 mb-4">
-                        <select className=" appearance-none border rounded-[12px] w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-sm dark:focus:shadow-gray-600 dark:bg-dark-secondary dark:border-gray-600 dark:color-secondary">
+                        <select className=" appearance-none border rounded-[12px] w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-sm dark:focus:shadow-gray-600 dark:bg-dark-secondary dark:border-gray-600 dark:text-secondary">
                             <option defaultValue disabled hidden>دسته بندی پدر</option>
                             <option >دسته اول</option>
                             <option >دسته دوم</option>
                         </select>
                     </div>
                     <div className="lg:px-2 md:pl-2 mb-4">
-                        <select className="appearance-none border rounded-[12px] w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-sm dark:focus:shadow-gray-600 dark:bg-dark-secondary dark:border-gray-600 dark:color-secondary">
+                        <select className="appearance-none border rounded-[12px] w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-sm dark:focus:shadow-gray-600 dark:bg-dark-secondary dark:border-gray-600 dark:text-secondary">
                             <option defaultValue disabled hidden>دسته بندی فرزند</option>
                             <option >دسته اول</option>
                             <option >دسته دوم</option>
                         </select>
                     </div>
                     <div className="lg:pr-2 md:pr-2 mb-4">
-                        <button type="button" className="bg-primary color-secondary px-6 py-2 rounded-[12px] text-sm w-full">
+                        <button type="button" className="bg-primary text-secondary px-6 py-2 rounded-[12px] text-sm w-full">
                             <MagnifyingGlassIcon className="w-6 h-6 inline-block ml-1"/>
                             جستجو
                         </button>

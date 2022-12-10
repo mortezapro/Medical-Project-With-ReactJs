@@ -12,43 +12,43 @@
     --dark-secondary:#382039;
 }
 @layer components {
-    .bg-primary{
-        background: var(--primary);
-    }
-    .bg-secondary{
-        background: var(--secondary);
-    }
-    .bg-dark-primary{
-        background: var(--dark-primary);
-    }
-    .bg-dark-secondary{
-        background: var(--dark-secondary);
-    }
+    /*.bg-primary{*/
+    /*    background: var(--primary);*/
+    /*}*/
+    /*.bg-secondary{*/
+    /*    background: var(--secondary);*/
+    /*}*/
+    /*.bg-dark-primary{*/
+    /*    background: var(--dark-primary);*/
+    /*}*/
+    /*.bg-dark-secondary{*/
+    /*    background: var(--dark-secondary);*/
+    /*}*/
 
-    .color-primary{
-        color: var(--primary);
-    }
-    .color-secondary{
-        color: var(--secondary);
-    }
-    .color-dark-primary{
-        color: var(--dark-primary);
-    }
-    .color-dark-secondary{
-        color: var(--dark-secondary);
-    }
-    .border-primary{
-        border:1px solid var(--primary);
-    }
-    .border-secondary{
-        border:1px solid var(--secondary);
-    }
-    .border-dark-primary{
-        border:1px solid var(--dark-primary);
-    }
-    .border-dark-secondary{
-        border:1px solid var(--dark-secondary);
-    }
+    /*.color-primary{*/
+    /*    color: var(--primary);*/
+    /*}*/
+    /*.color-secondary{*/
+    /*    color: var(--secondary);*/
+    /*}*/
+    /*.color-dark-primary{*/
+    /*    color: var(--dark-primary);*/
+    /*}*/
+    /*.color-dark-secondary{*/
+    /*    color: var(--dark-secondary);*/
+    /*}*/
+    /*.border-primary{*/
+    /*    border:1px solid var(--primary);*/
+    /*}*/
+    /*.border-secondary{*/
+    /*    border:1px solid var(--secondary);*/
+    /*}*/
+    /*.border-dark-primary{*/
+    /*    border:1px solid var(--dark-primary);*/
+    /*}*/
+    /*.border-dark-secondary{*/
+    /*    border:1px solid var(--dark-secondary);*/
+    /*}*/
 }
 .border-primary,.border-secondary,.border-dark-primary,.border-dark-secondary,.border-dark-third{
     transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
