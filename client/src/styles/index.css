@@ -1,63 +1,78 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@font-face{
-    src: url("../assets/fonts/IranYekan.woff2");
-    font-family: "IranYekan";
+@font-face {
+  src: url("../assets/fonts/IranYekan.woff2");
+  font-family: "IranYekan";
 }
 :root {
-    --primary: #a73f8b;
-    --secondary: #f8f2f2;
-    --dark-primary: #200F21;
-    --dark-secondary:#382039;
+  --primary: #a73f8b;
+  --secondary: #f8f2f2;
+  --dark-primary: #200f21;
+  --dark-secondary: #382039;
 }
 @layer components {
-    /*.bg-primary{*/
-    /*    background: var(--primary);*/
-    /*}*/
-    /*.bg-secondary{*/
-    /*    background: var(--secondary);*/
-    /*}*/
-    /*.bg-dark-primary{*/
-    /*    background: var(--dark-primary);*/
-    /*}*/
-    /*.bg-dark-secondary{*/
-    /*    background: var(--dark-secondary);*/
-    /*}*/
+  /*.bg-primary{*/
+  /*    background: var(--primary);*/
+  /*}*/
+  /*.bg-secondary{*/
+  /*    background: var(--secondary);*/
+  /*}*/
+  /*.bg-dark-primary{*/
+  /*    background: var(--dark-primary);*/
+  /*}*/
+  /*.bg-dark-secondary{*/
+  /*    background: var(--dark-secondary);*/
+  /*}*/
 
-    /*.color-primary{*/
-    /*    color: var(--primary);*/
-    /*}*/
-    /*.color-secondary{*/
-    /*    color: var(--secondary);*/
-    /*}*/
-    /*.color-dark-primary{*/
-    /*    color: var(--dark-primary);*/
-    /*}*/
-    /*.color-dark-secondary{*/
-    /*    color: var(--dark-secondary);*/
-    /*}*/
-    /*.border-primary{*/
-    /*    border:1px solid var(--primary);*/
-    /*}*/
-    /*.border-secondary{*/
-    /*    border:1px solid var(--secondary);*/
-    /*}*/
-    /*.border-dark-primary{*/
-    /*    border:1px solid var(--dark-primary);*/
-    /*}*/
-    /*.border-dark-secondary{*/
-    /*    border:1px solid var(--dark-secondary);*/
-    /*}*/
+  /*.color-primary{*/
+  /*    color: var(--primary);*/
+  /*}*/
+  /*.color-secondary{*/
+  /*    color: var(--secondary);*/
+  /*}*/
+  /*.color-dark-primary{*/
+  /*    color: var(--dark-primary);*/
+  /*}*/
+  /*.color-dark-secondary{*/
+  /*    color: var(--dark-secondary);*/
+  /*}*/
+  /*.border-primary{*/
+  /*    border:1px solid var(--primary);*/
+  /*}*/
+  /*.border-secondary{*/
+  /*    border:1px solid var(--secondary);*/
+  /*}*/
+  /*.border-dark-primary{*/
+  /*    border:1px solid var(--dark-primary);*/
+  /*}*/
+  /*.border-dark-secondary{*/
+  /*    border:1px solid var(--dark-secondary);*/
+  /*}*/
 }
-.border-primary,.border-secondary,.border-dark-primary,.border-dark-secondary,.border-dark-third{
-    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+.border-primary,
+.border-secondary,
+.border-dark-primary,
+.border-dark-secondary,
+.border-dark-third {
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
-body{
-    direction: rtl;
-    font-family: "IranYekan",sans-serif;
-    font-size: 1em;
+body {
+  direction: rtl;
+  font-family: "IranYekan", sans-serif;
+  font-size: 1em;
 }
-header a,header a:hover,header,main,body,footer{
-    transition: ease all 300ms;
+header a,
+header a:hover,
+header,
+main,
+body,
+footer {
+  transition: ease all 300ms;
+}
+
+/* utility classes */
+.input {
+  @apply bg-slate-100 border border-slate-100 py-2 px-4 rounded-lg outline-none focus:bg-white focus:border-pink-300 focus:ring-4 focus:ring-pink-200/50 active:border-gray-200 active:ring-0 transition-all;
 }

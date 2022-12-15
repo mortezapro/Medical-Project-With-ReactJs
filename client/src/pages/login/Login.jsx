@@ -24,12 +24,12 @@ export const Login = () => {
                   type="text"
                   name="username"
                   id="username"
-                  className="mt-2 bg-slate-100 border border-slate-100 py-2 px-4 text-left outline-none focus:bg-white focus:border-pink-300 focus:ring-4 focus:ring-pink-200/50 active:border-gray-200 active:ring-0 transition-all"
+                  className="input mt-2 text-left"
                 />
               </div>
               <div className="mt-14 flex justify-center text-sm xl:text-base">
                 <button
-                  className="bg-pink-400 text-white py-2 px-6 outline-none hover:opacity-80"
+                  className="bg-pink-400 text-white py-2 px-6 rounded-md outline-none hover:opacity-80"
                   onClick={() => setFormStep("translate-x-full")}
                 >
                   ادامه
@@ -62,17 +62,17 @@ export const Login = () => {
                   type="text"
                   name="password"
                   id="password"
-                  className="mt-2 bg-slate-100 border border-slate-100 py-2 px-4 text-left outline-none focus:bg-white focus:border-pink-300 focus:ring-4 focus:ring-pink-200/50 active:border-gray-200 active:ring-0 transition-all"
+                  className="input mt-2 text-left"
                 />
               </div>
               <div className="mt-14 flex justify-around text-sm xl:text-base">
                 <button
-                  className="bg-gray-400 text-white py-2 px-6 outline-none hover:opacity-80"
+                  className="bg-gray-400 text-white py-2 px-6 rounded-md outline-none hover:opacity-80"
                   onClick={() => setFormStep("translate-x-0")}
                 >
                   برگشت
                 </button>
-                <button className="bg-pink-400 text-white py-2 px-6 outline-none hover:opacity-80">
+                <button className="bg-pink-400 text-white py-2 px-6 rounded-md outline-none hover:opacity-80">
                   ورود
                 </button>
               </div>
