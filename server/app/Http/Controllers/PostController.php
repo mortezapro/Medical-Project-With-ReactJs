@@ -1,22 +1,41 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Http\Requests\PostRequest;
 use App\Services\Post\PostService;
-use Illuminate\Http\JsonResponse;
-use Illuminate\Http\Request;
+use App\Services\Post\PostServiceInterface;
 use Illuminate\Support\Facades\App;
 
 class PostController extends Controller
 {
-    public PostService $postService;
+    public PostService $service;
+
     public function __construct()
     {
-        $this->postService = App::make(PostService::class);
+        $this->setService();
     }
-    public function popularSwiper():JsonResponse
+    public function setService()
     {
-        $data = $this->postService->popularSwiper();
-        return response()->json($data);
+        $this->service = App::make(PostServiceInterface::class);
+    }
+
+    public function store(PostRequest $request)
+    {
+         return $this->save($request);
+    }
+
+    public function update(PostRequest $request)
+    {
+        return $this->save($request);
+    }
+
+    public function popularSwiper()
+    {
+        return $this->service->popularSwiper(8);
+    }
+
+    public function highlight()
+    {
+        return $this->service->highlight(8);
     }
 }
