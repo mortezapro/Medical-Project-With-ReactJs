@@ -1,37 +1,15 @@
 <?php
 
 namespace App\Services\Base;
+use App\Services\Base\Traits\PopularMethod;
+use App\Services\Base\Traits\RestFullService;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
+use Illuminate\Http\Resources\Json\JsonResource;
 
 class BaseService implements BaseServiceInterface
 {
+    use RestFullService,PopularMethod;
     protected Model $model;
-
-    public function __construct(Model $model)
-    {
-        $this->model = $model;
-    }
-
-    public function index()
-    {
-        return $this->model->all();
-    }
-
-    public function show($id)
-    {
-        return $this->model::find($id);
-    }
-
-    public function save(array $data,int $id = null)
-    {
-        if($id){
-            return $this->model->find($id)->update($data);
-        }
-        return $this->model->create($data);
-    }
-
-    public function delete(Model $model)
-    {
-        return $model->delete();
-    }
+    protected JsonResource $resource;
 }

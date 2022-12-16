@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import axios from "axios";
+import {axiosClient} from "components/common/axiosClient/AxiosClient";
 import Card from "components/common/card/Card";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination,Navigation } from 'swiper'
@@ -9,8 +9,8 @@ import {ArrowLeftIcon, ArrowRightIcon} from "@heroicons/react/24/outline";
 export default function HighlightSection(){
     const [data,setData] = useState();
     const fetchPopularData = async () => {
-        const response = await axios.get(process.env.REACT_APP_SERVER_URL+'popular-swiper');
-        return response.data;
+        const response = await axiosClient.get('highlight');
+        return response.data.data;
     }
     useEffect(() => {
         fetchPopularData()

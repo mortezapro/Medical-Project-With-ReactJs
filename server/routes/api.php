@@ -9,10 +9,13 @@ use App\Http\Controllers\PageController;
 use App\Http\Controllers\PostController;
 
 
-Route::group(['prefix'=>'v1'], function(){
-    Route::resource('/category', CategoryController::class);
-    Route::resource('/post', PostController::class);
-    Route::resource('/page', PageController::class);
-    Route::resource('/page', MenuController::class);
+Route::group(['prefix'=>'v1','middleware' => ['json']], function(){
+    // RestFul EndPoint
+    Route::apiResource('/category', CategoryController::class);
+    Route::apiResource('/post', PostController::class);
+    Route::apiResource('/page', PageController::class);
+    Route::apiResource('/page', MenuController::class);
+    // Application EndPoint
     Route::get('/popular-swiper', [PostController::class,"popularSwiper"]);
+    Route::get('/highlight', [PostController::class,"highlight"]);
 });

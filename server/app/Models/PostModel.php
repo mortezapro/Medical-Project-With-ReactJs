@@ -56,4 +56,5 @@ class PostModel extends Model
             return "no";
         }
     }
+
 }

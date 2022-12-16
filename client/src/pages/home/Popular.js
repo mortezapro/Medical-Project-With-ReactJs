@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import axios from "axios";
+import {axiosClient} from "components/common/axiosClient/AxiosClient";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from 'swiper'
 import 'swiper/css';
@@ -8,8 +8,8 @@ import CardOverlay from "components/common/cardOverlay/CardOverlay";
 export default function Popular(){
     const [data,setData] = useState();
     const fetchPopularData = async () => {
-        const response = await axios.get(process.env.REACT_APP_SERVER_URL+'popular-swiper');
-        return response.data;
+        const response = await axiosClient.get('popular-swiper');
+        return response.data.data;
     }
     useEffect( () => {
         fetchPopularData()
