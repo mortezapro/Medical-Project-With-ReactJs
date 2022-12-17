@@ -1,0 +1,2 @@
+    // {{ pascal_name }}s route
+    Route::apiResource('/{{ lower_name }}', {{ pascal_name }}Controller::class);

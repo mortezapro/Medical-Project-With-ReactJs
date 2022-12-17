@@ -1,15 +1,17 @@
 <?php
 
-use App\Http\Controllers\FrontendController;
-use Illuminate\Http\Request;
+
+
+
+use App\Http\Controllers\TestController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\PostController;
+use App\Services\Code;
 
-
-Route::group(['prefix'=>'v1','middleware' => ['json']], function(){
+Route::group(["prefix"=>"v1","middleware" => ["json"]], function(){
     // RestFul EndPoint
     Route::apiResource('/category', CategoryController::class);
     Route::apiResource('/post', PostController::class);
