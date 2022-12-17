@@ -1,17 +1,22 @@
 import { useState } from "react";
 import { Username, Password } from "./";
-import Error from "components/common/alert/Error";
+import { Toastify } from "../../components/common/toastify";
 
 import logo from "../../assets/images/logo/logo-sm.png";
 
 export const Form = () => {
   const [formStep, setFormStep] = useState("");
   const [username, setUsername] = useState("");
-  const [showError, setShowError] = useState({ status: false, message: "" });
+  const [toastify, setToastify] = useState({ message: "" });
 
   return (
     <>
-      {showError.status && <Error message={showError.message} />}
+      <Toastify
+        message={toastify.message}
+        type={toastify.type}
+        theme={toastify.theme}
+        position={toastify.position}
+      />
       <div className="w-full py-5 px-4 text-gray-500 relative md:w-1/2 md:py-6 md:px-5 lg:py-10 xl:px-10">
         <div className="flex flex-nowrap overflow-hidden">
           {/* username */}
@@ -20,7 +25,7 @@ export const Form = () => {
             setFormStep={setFormStep}
             username={username}
             setUsername={setUsername}
-            setShowError={setShowError}
+            setToastify={setToastify}
           />
           {/* password */}
           <Password formStep={formStep} setFormStep={setFormStep} />

@@ -3,20 +3,22 @@ export const Username = ({
   setFormStep,
   username,
   setUsername,
-  setShowError,
+  setToastify,
 }) => {
   const nextSlide = () => {
     username
       ? setFormStep("translate-x-full")
-      : setShowError({
-          status: true,
+      : setToastify({
           message: "لطفا نام کاربری را وارد نمایید",
+          type: "error",
+          // theme: "colored",
+          position: "top-center",
         });
   };
 
   const handleChange = (e) => {
     setUsername(e.target.value);
-    setShowError({ status: false, message: "" });
+    setToastify({ message: "" });
   };
 
   return (
