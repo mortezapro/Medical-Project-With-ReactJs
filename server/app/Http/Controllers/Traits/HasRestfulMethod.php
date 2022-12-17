@@ -1,7 +1,5 @@
 <?php
 namespace App\Http\Controllers\Traits;
-use Illuminate\Http\Request;
-
 trait HasRestfulMethod{
     public function index()
     {
@@ -18,9 +16,18 @@ trait HasRestfulMethod{
         return $this->service->destroy($id);
     }
 
-    public function save(Request $request)
+    public function store()
     {
-        return $this->service->create($request);
+        // set request fro perform validation & authorization Form Request
+        $this->setRequest();
+        return $this->service->save($this->request);
+    }
+
+    public function update(Model $model)
+    {
+        // set request fro perform validation & authorization Form Request
+        $this->setRequest();
+        return $this->service->save($this->request,$model);
     }
 
 }

@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\App;
 class PostController extends Controller
 {
     public PostService $service;
+    public PostRequest $request;
 
     public function __construct()
     {
@@ -19,14 +20,9 @@ class PostController extends Controller
         $this->service = App::make(PostServiceInterface::class);
     }
 
-    public function store(PostRequest $request)
+    public function setRequest()
     {
-         return $this->save($request);
-    }
-
-    public function update(PostRequest $request)
-    {
-        return $this->save($request);
+        $this->request = App::make(PostRequest::class);
     }
 
     public function popularSwiper()
