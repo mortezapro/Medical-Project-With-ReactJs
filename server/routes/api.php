@@ -16,4 +16,5 @@ Route::group(["prefix"=>"v1","middleware" => ["json"]], function(){
     // Application EndPoint
     Route::get('/popular-swiper', [PostController::class,"popularSwiper"]);
     Route::get('/highlight', [PostController::class,"highlight"]);
+
 });
