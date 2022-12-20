@@ -20,14 +20,14 @@ trait HasRestfulMethod{
     {
         // set request fro perform validation & authorization Form Request
         $this->setRequest();
-        return $this->service->save($this->request);
+        return $this->service->save($this->storeRequest);
     }
 
     public function update(Model $model)
     {
         // set request fro perform validation & authorization Form Request
         $this->setRequest();
-        return $this->service->save($this->request,$model);
+        return $this->service->save($this->updateRequest,$model);
     }
 
 }

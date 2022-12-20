@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Post;
 use App\Http\Requests\Traits\ResponseValidation;
 use Illuminate\Foundation\Http\FormRequest;
-class PostRequest extends FormRequest
+
+class UpdatePostRequest extends FormRequest
 {
     use ResponseValidation;
     /**

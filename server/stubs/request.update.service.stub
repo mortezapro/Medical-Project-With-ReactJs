@@ -1,0 +1,26 @@
+<?php
+namespace {{ namespace }};
+use Illuminate\Foundation\Http\FormRequest;
+use App\Http\Requests\Traits\ResponseValidation;
+
+class Update{{ name }}Request extends FormRequest
+{
+    use ResponseValidation;
+    public function authorize():bool
+    {
+        return true;
+    }
+
+    public function rules():array
+    {
+        return [
+
+        ];
+    }
+    public function messages():array
+    {
+        return [
+
+        ];
+    }
+}

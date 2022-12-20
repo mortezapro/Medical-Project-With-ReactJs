@@ -1,15 +1,10 @@
 <?php
 
-
-
-
-use App\Http\Controllers\TestController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\PostController;
-use App\Services\Code;
 
 Route::group(["prefix"=>"v1","middleware" => ["json"]], function(){
     // RestFul EndPoint
@@ -17,6 +12,7 @@ Route::group(["prefix"=>"v1","middleware" => ["json"]], function(){
     Route::apiResource('/post', PostController::class);
     Route::apiResource('/page', PageController::class);
     Route::apiResource('/page', MenuController::class);
+
     // Application EndPoint
     Route::get('/popular-swiper', [PostController::class,"popularSwiper"]);
     Route::get('/highlight', [PostController::class,"highlight"]);

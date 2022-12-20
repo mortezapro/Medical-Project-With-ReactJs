@@ -1,7 +1,6 @@
 <?php
 
-namespace App\Services\Code;
-
+namespace App\Helpers;
 class Code{
 
     public function putToFileWithLine(string $filePath, string $content,int $line)
@@ -16,8 +15,7 @@ class Code{
     {
         $file = file($filePath);
         $putLine = $this->getPlaceLine($file,$startingCondition,$terminationCondition);
-
-        $content = PHP_EOL.$content.PHP_EOL;
+        $content = $content.PHP_EOL;
         array_splice($file,$putLine,0,$content);
         file_put_contents($filePath,$file);
     }
