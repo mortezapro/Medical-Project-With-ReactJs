@@ -2,7 +2,12 @@
 
 namespace App\Exceptions;
 
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Illuminate\Http\Exceptions\HttpResponseException;
+use Illuminate\Validation\ValidationException;
+use Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Throwable;
 
 class Handler extends ExceptionHandler
@@ -27,15 +32,36 @@ class Handler extends ExceptionHandler
         'password_confirmation',
     ];
 
-    /**
-     * Register the exception handling callbacks for the application.
-     *
-     * @return void
-     */
     public function register()
     {
-        $this->reportable(function (Throwable $e) {
-            //
+        $this->renderable(function (ModelNotFoundException $e, $request) {
+            return response()->json([
+                'success' => false,
+                'code' => 404,
+                'message' => __('json.model_not_found')
+            ], 404);
+        });
+        $this->renderable(function (NotFoundHttpException $e, $request) {
+            return response()->json([
+                'success' => false,
+                'code' => 404,
+                'message' => __('json.404')
+            ], 404);
+        });
+        $this->renderable(function (MethodNotAllowedHttpException $e, $request) {
+            return response()->json([
+                'success' => false,
+                'code' => 405,
+                'message' => __('json.method_not_allowed_http_exception')
+            ], 405);
+        });
+        $this->renderable(function (ValidationException $e, $request) {
+            throw new HttpResponseException(response()->json([
+                'success' => false,
+                'code' => 422,
+                'errors' => $e->errors()
+            ], 422));
         });
     }
+
 }

@@ -10,7 +10,7 @@ export default function HighlightSection(){
     const [data,setData] = useState();
     const fetchPopularData = async () => {
         const response = await axiosClient.get('highlight');
-        return response.data.data;
+        return response.data;
     }
     useEffect(() => {
         fetchPopularData()
