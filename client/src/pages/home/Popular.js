@@ -9,7 +9,7 @@ export default function Popular(){
     const [data,setData] = useState();
     const fetchPopularData = async () => {
         const response = await axiosClient.get('popular-swiper');
-        return response.data.data;
+        return response.data;
     }
     useEffect( () => {
         fetchPopularData()

@@ -1,0 +1,29 @@
+<?php
+
+namespace {{ namespace }};
+use App\Http\Requests\{{ name }}\Store{{ name }}Request;
+use App\Http\Requests\{{ name }}\Update{{ name }}Request;
+use App\Services\{{ name }}\{{ name }}ServiceInterface;
+use Illuminate\Support\Facades\App;
+
+class {{ name }}Controller extends Controller
+{
+    public {{ name }}ServiceInterface $service;
+    public Store{{ name }}Request $storeRequest;
+    public Update{{ name }}Request $updateRequest;
+
+    public function __construct()
+    {
+        $this->setService();
+    }
+    public function setService()
+    {
+        $this->service = App::make({{ name }}ServiceInterface::class);
+    }
+
+    public function setRequest()
+    {
+        $this->storeRequest = App::make(Store{{ name }}Request::class);
+        $this->updateRequest = App::make(Update{{ name }}Request::class);
+    }
+}

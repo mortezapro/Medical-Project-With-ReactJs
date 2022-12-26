@@ -31,7 +31,7 @@ class Images
 
         $mediumPath = public_path(str_replace("/",DIRECTORY_SEPARATOR,$path)).DIRECTORY_SEPARATOR."md".DIRECTORY_SEPARATOR;
 		$mediumPath = str_replace("/local/public","",$mediumPath);
-		
+
         $largePath = public_path(str_replace("/",DIRECTORY_SEPARATOR,$path)).DIRECTORY_SEPARATOR."lg".DIRECTORY_SEPARATOR;
 		$largePath = str_replace("/local/public","",$largePath);
 
@@ -45,7 +45,7 @@ class Images
     public function createFileName($request, $inputName , $path):string
     {
         $fileName = explode(".", $request->file($inputName)->getClientOriginalName())[0] . "." . $request->file($inputName)->extension();
-        if(file_exists("$path/".$fileName)){
+        if(file_exists(public_path($path.DIRECTORY_SEPARATOR."default".DIRECTORY_SEPARATOR.$fileName))){
             $fileName = explode(".", $request->file($inputName)->getClientOriginalName())[0] . Carbon::now()->toArray()["timestamp"] . "." . $request->file($inputName)->extension();
         }
         return $fileName;

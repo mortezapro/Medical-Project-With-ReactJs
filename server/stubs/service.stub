@@ -1,0 +1,30 @@
+<?php
+
+namespace {{ namespace }};
+
+use App\Http\Resources\{{ name }}Resource;
+use App\Models\{{ name }}Model;
+use Illuminate\Database\Eloquent\Model;
+use App\Services\Base\BaseService;
+use Illuminate\Http\Resources\Json\JsonResource;
+use Illuminate\Support\Facades\App;
+
+class {{ name }}Service extends BaseService implements {{ name }}ServiceInterface
+{
+    public JsonResource $resource;
+    protected Model $model;
+
+    public function __construct()
+    {
+        $this->setModel();
+        $this->setResource();
+    }
+    public function setModel():void
+    {
+        $this->model = App::make({{ name }}Model::class);
+    }
+    public function setResource():void
+    {
+        $this->resource = new {{ name }}Resource(request());
+    }
+}

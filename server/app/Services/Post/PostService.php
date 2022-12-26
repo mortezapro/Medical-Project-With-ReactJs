@@ -7,7 +7,6 @@ use App\Models\CategoryModel;
 use App\Models\PostModel;
 use Illuminate\Database\Eloquent\Model;
 use App\Services\Base\BaseService;
-use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Support\Facades\App;
 

@@ -1,0 +1,4 @@
+        $this->app->bind(
+            {{ name }}ServiceInterface::class,
+            {{ name }}Service::class
+        );
