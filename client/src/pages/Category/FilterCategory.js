@@ -1,18 +1,19 @@
 import Header from "components/common/header/Header";
 import React from "react";
-
+import Checkbox from "components/common/Checkbox/CheckBox";
 export const FilterCategory = () => {
 	return (
 		<div>
 			<Header />
-			<div>
+			<div className="flex mt-3 justify-between mx-6 items-baseline">
+				<p>فیلتر</p>
 				<div>
 					<div class="flex justify-center">
-						<div className="mb-3 xl:w-96">
-							<div className="relative flex items-stretch w-full mb-4">
+						<div className="mb-3 xl:w-[900px]">
+							<div className="relative flex items-stretch  mb-4">
 								<input
 									type="search"
-									className="form-control rounded-full relative flex-auto min-w-0 block w-full px-3 py-1.5 text-base font-normal
+									className="form-control w-96 rounded-full relative flex-auto min-w-0 block px-3 py-1.5 text-base font-normal
 									 text-gray-700 bg-gray-100 bg-clip-padding border border-solid border-gray-300 transition 
 									 ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-primary-600 focus:outline-none"
 									placeholder="جستجوی لباس پوشاک پستونک و..."
@@ -46,7 +47,15 @@ export const FilterCategory = () => {
 						</div>
 					</div>
 				</div>
-				<p>فیلتر</p>
+			</div>
+			<div className="grid grid-cols-2 mx-6">
+				<div className="shadow-inner w-1/3">
+					<p>دسته بندی</p>
+					<div>
+						<Checkbox />
+					</div>
+				</div>
+				<div className="shadow-inner w-2/3 h-auto">askari</div>
 			</div>
 		</div>
 	);
