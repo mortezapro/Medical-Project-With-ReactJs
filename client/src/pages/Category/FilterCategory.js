@@ -1,11 +1,16 @@
 import Header from "components/common/header/Header";
 import React from "react";
 import Checkbox from "components/common/Checkbox/CheckBox";
+import CardOverlay from "components/common/cardOverlay/CardOverlay";
+import { FilterCard } from "components/common/FilterCard/FilterCard";
+import { titlesSidebar } from "components/common/Checkbox/categoryList";
+import Footer from "components/common/footer/Footer";
+
 export const FilterCategory = () => {
 	return (
 		<div>
 			<Header />
-			<div className="flex mt-3 justify-between mx-6 items-baseline">
+			<div className="flex mt-3 justify-between mx-[5%] items-baseline">
 				<p>فیلتر</p>
 				<div>
 					<div class="flex justify-center">
@@ -15,7 +20,7 @@ export const FilterCategory = () => {
 									type="search"
 									className="form-control w-96 rounded-full relative flex-auto min-w-0 block px-3 py-1.5 text-base font-normal
 									 text-gray-700 bg-gray-100 bg-clip-padding border border-solid border-gray-300 transition 
-									 ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-primary-600 focus:outline-none"
+									 ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-primary-600 focus:outline-none placeholder:text-sm"
 									placeholder="جستجوی لباس پوشاک پستونک و..."
 									aria-label="جستجوی لباس پوشاک پستونک و..."
 									aria-describedby="button-addon2"
@@ -48,14 +53,19 @@ export const FilterCategory = () => {
 					</div>
 				</div>
 			</div>
-			<div className="grid grid-cols-2 mx-6">
-				<div className="shadow-inner w-1/3">
-					<p>دسته بندی</p>
-					<div>
-						<Checkbox />
-					</div>
+			<div className="grid grid-flow-col mx-[4%] grid-cols-6 gap-6">
+				<div className="shadow-lg rounded-xl border-stone-600 shadow-stone-400 bg-zinc-50 col-span-1 ">
+					{titlesSidebar.map((item) => {
+						return <p className="mr-3 mt-2 text-sm">{item.title}</p>;
+						<Checkbox />;
+					})}
 				</div>
-				<div className="shadow-inner w-2/3 h-auto">askari</div>
+				<div className="col-span-5">
+					<FilterCard />
+				</div>
+			</div>
+			<div className="mt-8">
+				<Footer />
 			</div>
 		</div>
 	);

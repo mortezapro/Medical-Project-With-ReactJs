@@ -11,10 +11,68 @@ export const rangeAge = [
 	{ id: "4", lable: "18-24 سال" },
 	{ id: "5", lable: "25-30 سال" },
 ];
-export const price = [
-	{ id: "1", lable: "کمتر از 200هزار تومان" },
-	{ id: "2", lable: "بیشتر از 200هزار تومان" },
-	{ id: "3", lable: "کمتر از ۱ میلیون" },
-	{ id: "4", lable: "بین ۱تا۲میلیون" },
-	{ id: "5", lable: "تخفیف دارها" },
+export const titlesSidebar = [
+	{
+		title: "دسته بندی",
+		id: "1",
+		body: { sub: "{غذاخوری,سرگرمی و اموزش, لوازم شخصی,بهداشت و حمام }" },
+	},
+	// { title: "بازه سنی", id: "2", body: { sub: "{}" } },
+	// { title: "قیمت", id: "3", body: { sub: "{}" } },
+];
+export const Product = [
+	{
+		id: 1,
+		title: "بلوز دخترانه ",
+		description: "ملوان سایز 1",
+		price: "10000",
+	},
+	{
+		id: 2,
+		title: "بلوز دخترانه ",
+		description: "ملوان سایز 2",
+		price: "20000",
+	},
+	{
+		id: 3,
+		title: "بلوز دخترانه ",
+		description: "ملوان سایز 3",
+		price: "30000",
+	},
+	{
+		id: 4,
+		title: "بلوز دخترانه ",
+		description: "ملوان سایز 1",
+		price: "10000",
+	},
+	{
+		id: 5,
+		title: "بلوز دخترانه ",
+		description: "ملوان سایز 2",
+		price: "20000",
+	},
+	{
+		id: 6,
+		title: "بلوز دخترانه ",
+		description: "ملوان سایز 3",
+		price: "30000",
+	},
+	{
+		id: 7,
+		title: "بلوز دخترانه ",
+		description: "ملوان سایز 1",
+		price: "10000",
+	},
+	{
+		id: 8,
+		title: "بلوز دخترانه ",
+		description: "ملوان سایز 2",
+		price: "20000",
+	},
+	{
+		id: 9,
+		title: "بلوز دخترانه ",
+		description: "ملوان سایز 3",
+		price: "30000",
+	},
 ];
