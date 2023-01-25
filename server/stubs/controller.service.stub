@@ -21,9 +21,13 @@ class {{ name }}Controller extends Controller
         $this->service = App::make({{ name }}ServiceInterface::class);
     }
 
-    public function setRequest()
+    public function setStoreRequest()
     {
         $this->storeRequest = App::make(Store{{ name }}Request::class);
+    }
+
+    public function setUpdateRequest()
+    {
         $this->updateRequest = App::make(Update{{ name }}Request::class);
     }
 }
