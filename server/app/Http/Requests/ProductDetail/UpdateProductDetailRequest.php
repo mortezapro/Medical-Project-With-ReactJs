@@ -1,8 +1,8 @@
 <?php
-namespace {{ namespace }};
+namespace App\Http\Requests\ProductDetail;
 use Illuminate\Foundation\Http\FormRequest;
 
-class Update{{ name }}Request extends FormRequest
+class UpdateProductDetailRequest extends FormRequest
 {
     public function authorize():bool
     {

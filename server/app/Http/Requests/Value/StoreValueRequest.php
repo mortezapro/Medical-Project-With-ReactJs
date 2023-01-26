@@ -1,8 +1,8 @@
 <?php
-namespace {{ namespace }};
+namespace App\Http\Requests\Value;
 use Illuminate\Foundation\Http\FormRequest;
 
-class Update{{ name }}Request extends FormRequest
+class StoreValueRequest extends FormRequest
 {
     public function authorize():bool
     {

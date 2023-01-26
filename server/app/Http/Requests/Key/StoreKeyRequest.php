@@ -1,8 +1,8 @@
 <?php
-namespace {{ namespace }};
+namespace App\Http\Requests\Key;
 use Illuminate\Foundation\Http\FormRequest;
 
-class Update{{ name }}Request extends FormRequest
+class StoreKeyRequest extends FormRequest
 {
     public function authorize():bool
     {
