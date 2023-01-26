@@ -1,11 +1,11 @@
 <?php
-namespace App\Helpers\Filter\Base;
+namespace App\Filters\Base;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Str;
 
 class BaseFilter{
-    protected string $declared_filters;
+    protected array $declared_filters;
 
     public function __construct($filters){
         $this->request = request();
@@ -20,13 +20,12 @@ class BaseFilter{
     }
 
     public function getRequestedFilters(){
-        return array_filter($this->request->only($this- >declared_filters));
+        return array_filter($this->request->only($this->declared_filters));
   }
 
     public function resolveFilterClass($declared_filter_key){
         $filter_name = Str::studly($declared_filter_key);
-        $class_name = "\\App\Filters\\".$filter_name."Filter";
-        $class_instance = App::make($class_name);
-        return $class_instance;
+        $class_name = "App".DIRECTORY_SEPARATOR."Filters".DIRECTORY_SEPARATOR.$filter_name."Filter";
+        return App::make($class_name);
     }
 }
