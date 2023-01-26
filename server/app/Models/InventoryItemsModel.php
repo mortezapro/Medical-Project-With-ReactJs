@@ -15,6 +15,10 @@ class InventoryItemsModel extends Model
         "detail_id","price","quantity","currency_id","inventory_id"
     ];
 
+    public function inventory()
+    {
+        return $this->belongsTo(InventoryModel::class,"inventory_id ");
+    }
     public function currency()
     {
         return $this->belongsTo(CurrencyModel::class,"currency_id");
