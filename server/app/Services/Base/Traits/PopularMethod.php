@@ -1,6 +1,5 @@
 <?php
 namespace App\Services\Base\Traits;
-
 use App\Helpers\Images;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;

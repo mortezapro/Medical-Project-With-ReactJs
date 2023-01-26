@@ -17,7 +17,6 @@ trait Response{
             "success" => false,
             "code" => $statusCode,
             "message" => $message,
-            "data" => null
         ]);
     }
 }

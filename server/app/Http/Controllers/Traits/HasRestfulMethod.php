@@ -1,9 +1,10 @@
 <?php
 namespace App\Http\Controllers\Traits;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Request;
 
 trait HasRestfulMethod{
-    public function index()
+    public function index(Request $request)
     {
         return $this->successResponse(true,200,$this->service->index());
     }

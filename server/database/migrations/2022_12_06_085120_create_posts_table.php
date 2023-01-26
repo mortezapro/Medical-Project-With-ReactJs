@@ -29,6 +29,7 @@ class CreatePostsTable extends Migration
             $table->string("seo_title")->nullable();
             $table->string("seo_description")->nullable();
             $table->string("seo_image")->nullable();
+            $table->longText("schema")->nullable();
             $table->timestamps();
 
             $table->foreign("user_id")->references("id")->on("users")->onDelete('cascade');

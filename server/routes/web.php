@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +18,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::group(["as"=>"front."],function (){
+    //test
+    Route::post("/shop",[ProductController::class,"filter"])->name("shop.filter");
+    Route::get("/category/{slug}",[CategoryController::class,"show"])->name("category.show");
+});
+
+
