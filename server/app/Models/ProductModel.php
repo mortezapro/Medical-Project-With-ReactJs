@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class ProductModel extends Model
 {
@@ -20,31 +21,20 @@ class ProductModel extends Model
         "seo_description","seo_image","schema"
     ];
 
-    protected $appends=["price","arrayPrice"];
+    protected $appends=["price"];
 
-    public function getArrayPriceAttribute()
-    {
-//        return $this->details[0]->inventoryItems[0]->price * $this->details[0]->inventoryItems[0]->currency->value;
-        $price = [];
-        foreach ($this->details as $detail) {
-            foreach ($detail->inventoryItems as $inventoryItem){
-                $price[] = $inventoryItem->price * $inventoryItem->currency->value;
-            }
-        }
-        return $price;
-    }
     public function getPriceAttribute()
     {
-        return $this->details[0]->inventoryItems[0]->price * $this->details[0]->inventoryItems[0]->currency->value;
+        return $this->details[0]->inventoryItems->price * $this->details[0]->inventoryItems->currency->value;
     }
     public function details() :HasMany
     {
         return $this->hasMany(ProductDetailModel::class,"product_id");
     }
 
-    public function brand() :BelongsTo
+    public function brand() :HasOne
     {
-        return $this->belongsTo(BrandModel::class,"brand_id");
+        return $this->hasOne(BrandModel::class,"id");
     }
 
     public function scopeCanFilter(Builder $builder, $filters){
@@ -54,7 +44,10 @@ class ProductModel extends Model
     protected static function booted()
     {
         static::addGlobalScope('relation', function (Builder $builder) {
-            $builder->with("details")->with("brand")->with("categories");
+            $builder->with("details.values.key")->with("details.inventoryItems")
+                ->with("details.inventoryItems.inventory")
+                ->with("details.inventoryItems.currency")
+                ->with("brand")->with("categories");
         });
     }
 }

@@ -13,4 +13,8 @@ class ValueModel extends Model
     protected $fillable = [
         "key_id","name"
     ];
+    public function key()
+    {
+        return $this->belongsTo(KeyModel::class,"key_id");
+    }
 }
